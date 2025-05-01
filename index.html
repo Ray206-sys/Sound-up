@@ -80,10 +80,6 @@
                 const classPrediction = classLabels[i] + ": " + result.scores[i].toFixed(2);
                 labelContainer.childNodes[i].innerHTML = classPrediction;
                 if (score >= 0.9 && className !== "バックグラウンド ノイズ" && className !== "_unknown_") {
-    console.log("通知するクラス: " + className + " (スコア: " + score.toFixed(2) + ")");
-                if (navigator.vibrate) {
-    navigator.vibrate(1000); // 1000msの振動
-                 }
     ThunkableWebviewerExtension.postMessage(className);
                 }
 
